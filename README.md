@@ -1,7 +1,9 @@
 # Teste-TownSq
- esse é um teste para vaga de estágio em java
+ esse é um teste para vaga de estágio em java.
 
- QUESTÃO: 
+FEITO POR: Eric Rodrigues Diniz.
+
+QUESTÃO: 
 
 Uma sorveteria fez uma pesquisa para descobrir qual dos cinco sabores que servem é o mais popular. As opções de sabor são: flocos, chocolate, morango, creme e napolitano. O seu trabalho é contabilizar qual é o sabor mais popular.
 
