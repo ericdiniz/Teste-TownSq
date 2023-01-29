@@ -3,39 +3,55 @@ import java.util.Locale;
 import java.util.function.Function;
 
 public class Main {
-    
+    // public static int count(int votacao[]) {
+    // int count[] = { 0, 0, 0, 0, 0 };
+    // int maiorIndice = 0;
+    // for (int i = 0; i < votacao.length; i++) {
+    // count[votacao[i]]++;
+    // }
+    // for (int i = 1; i < count.length; i++) {
+    // int maior = count[0];
+    // if (count[i] > maior)
+    // maior = count[i];
+    // maiorIndice = i;
+    // }
+    // return maiorIndice;
+    // }
+
     public static void main(String[] args) {
         Locale.setDefault(Locale.US);
 
         Sorvete[] array = new Sorvete[5];
 
         array[0] = new Sorvete("flocos", 0);
-        array[1] =  new Sorvete("chocolate", 1);
-        array[2] =  new Sorvete("morango", 2);
-        array[3] =  new Sorvete("creme", 3);
-        array[4] =  new Sorvete("napolitano", 4);
+        array[1] = new Sorvete("chocolate", 1);
+        array[2] = new Sorvete("morango", 2);
+        array[3] = new Sorvete("creme", 3);
+        array[4] = new Sorvete("napolitano", 4);
 
         // Entrada de dados da votação realizada
         int[] votacao = { 0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 4 };
         int resultado = Votacao.calcularResultado(votacao, array);
         // Resultado esperado = 1
         System.out.println(resultado);
+        // count(votacao);
     }
 }
 
 class Votacao {
 
-    public static void verificaEmpate(Sorvete[] array){
-        for (int i = array.length -1; i > 0; i--) {
-            if(array[i].getPontuacao() == array[i-1].getPontuacao()){
-                if(array[i].getIndice() > array[i-1].getIndice()){
+    public static void verificaEmpate(Sorvete[] array) {
+        for (int i = array.length - 1; i > 0; i--) {
+            if (array[i].getPontuacao() == array[i - 1].getPontuacao()) {
+                if (array[i].getIndice() > array[i - 1].getIndice()) {
                     Sorvete t = array[i];
-                    array[i] = array[i-1];
-                    array[i-1] = t;
+                    array[i] = array[i - 1];
+                    array[i - 1] = t;
                 }
             }
         }
     }
+
     public static void ordenandoPorSelecao(Sorvete[] array) {
         for (int fixo = 0; fixo < array.length - 1; fixo++) {
             int menor = fixo;
@@ -52,6 +68,7 @@ class Votacao {
             }
         }
     }
+
     public static int calcularResultado(int[] votacao, Sorvete[] array) {
         int f = 0, c = 0, m = 0, cr = 0, n = 0;
         for (int i = 0; i < votacao.length; i++) {
